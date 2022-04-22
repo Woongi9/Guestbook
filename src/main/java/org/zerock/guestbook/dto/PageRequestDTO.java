@@ -4,9 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import java.awt.print.Pageable;
+//import java.awt.print.Pageable;
 
 @Builder
 @AllArgsConstructor
@@ -25,6 +26,6 @@ public class PageRequestDTO {
     }
 
     public Pageable getPageable(Sort sort) {
-        return (Pageable) PageRequest.of(page - 1, size, sort);
+        return PageRequest.of(page - 1, size, sort);
     }
 }
